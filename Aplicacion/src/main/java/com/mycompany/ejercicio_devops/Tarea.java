@@ -9,15 +9,21 @@ package com.mycompany.ejercicio_devops;
  * @author daw2
  */
 public class Tarea {
+    private int id;
     private String titulo;
     private boolean estado;
     private String descripcion;
 
     public Tarea(String titulo, String descripcion) {
+        this.id = 0;
         this.titulo = titulo;
         this.estado = false;
-        this.descripcion=descripcion;
-        
+        this.descripcion = descripcion;
+        this.id++;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getTitulo() {
@@ -27,7 +33,6 @@ public class Tarea {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-
 
     public boolean isEstado() {
         return estado;
@@ -44,6 +49,14 @@ public class Tarea {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    @Override
+    public String toString() {
+        return "Tarea{" + "id=" + id + ", titulo=" + titulo + ", estado=" + estado + ", descripcion=" + descripcion + '}';
+    }
+    
+    
+
     
     
 }
